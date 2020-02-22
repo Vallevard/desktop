@@ -4,14 +4,14 @@ import { remote, app } from 'electron';
 const pkg = require('../../package.json');
 
 export const DEFAULT_SETTINGS: ISettings = {
-  theme: 'wexond-light',
+  theme: 'wexond-dark',
   darkContents: false,
   shield: true,
   multrin: true,
   animations: true,
   bookmarksBar: false,
   suggestions: true,
-  themeAuto: true,
+  themeAuto: false,
   searchEngines: [],
   searchEngine: 0,
   startupBehavior: {
@@ -23,8 +23,8 @@ export const DEFAULT_SETTINGS: ISettings = {
   downloadsPath: remote
     ? remote.app.getPath('downloads')
     : app
-    ? app.getPath('downloads')
-    : '',
+      ? app.getPath('downloads')
+      : '',
 };
 
 export const DEFAULT_SEARCH_ENGINES = [
