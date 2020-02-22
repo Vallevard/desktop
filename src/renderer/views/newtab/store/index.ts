@@ -13,8 +13,8 @@ export class Store {
     return getTheme(this.settings.theme);
   }
 
-  @observable
-  public news: INewsItem[] = [];
+  // @observable
+  // public news: INewsItem[] = [];
 
   @observable
   public image = '';
@@ -32,15 +32,15 @@ export class Store {
 
     this.loadImage();
     this.loadTopSites();
-    this.loadNews();
+    // this.loadNews();
 
-    window.onscroll = () => {
-      this.updateNews();
-    };
+    // window.onscroll = () => {
+    //   this.updateNews();
+    // };
 
-    window.onresize = () => {
-      this.updateNews();
-    };
+    // window.onresize = () => {
+    //   this.updateNews();
+    // };
   }
 
   public async loadImage() {
@@ -78,37 +78,37 @@ export class Store {
       .catch(e => console.error(e));
   }
 
-  public async updateNews() {
-    const scrollPos = window.scrollY;
-    const scrollMax =
-      document.body.scrollHeight - document.body.clientHeight - 768;
+  // public async updateNews() {
+  //   const scrollPos = window.scrollY;
+  //   const scrollMax =
+  //     document.body.scrollHeight - document.body.clientHeight - 768;
 
-    if (scrollPos >= scrollMax && this.loaded && this.page !== 10) {
-      this.page++;
-      this.loaded = false;
-      try {
-        await this.loadNews();
-      } catch (e) {
-        console.error(e);
-      }
-      this.loaded = true;
-    }
-  }
+  //   if (scrollPos >= scrollMax && this.loaded && this.page !== 10) {
+  //     this.page++;
+  //     this.loaded = false;
+  //     try {
+  //       await this.loadNews();
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //     this.loaded = true;
+  //   }
+  // }
 
-  public async loadNews() {
-    try {
-      const { data } = await requestURL('http://80.211.255.51:7000/news'); // ?lang=
-      const json = JSON.parse(data);
+  // public async loadNews() {
+  //   try {
+  //     const { data } = await requestURL('http://80.211.255.51:7000/news'); // ?lang=
+  //     const json = JSON.parse(data);
 
-      if (json.articles) {
-        this.news = this.news.concat(json.articles);
-      } else {
-        throw new Error('Error fetching news');
-      }
-    } catch (e) {
-      throw e;
-    }
-  }
+  //     if (json.articles) {
+  //       this.news = this.news.concat(json.articles);
+  //     } else {
+  //       throw new Error('Error fetching news');
+  //     }
+  //   } catch (e) {
+  //     throw e;
+  //   }
+  // }
 
   public async loadTopSites() {
     this.topSites = await (window as any).getTopSites(8);
