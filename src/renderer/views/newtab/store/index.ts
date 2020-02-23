@@ -2,7 +2,7 @@ import { observable, computed } from 'mobx';
 import { ISettings, ITheme, IVisitedItem } from '~/interfaces';
 import { getTheme } from '~/utils/themes';
 import { requestURL } from '~/utils/network';
-import { INewsItem } from '~/interfaces/news-item';
+// import { INewsItem } from '~/interfaces/news-item';
 
 export class Store {
   @observable

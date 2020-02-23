@@ -120,10 +120,10 @@ export const QuickMenu = observer(() => {
             <Icon icon={icons.settings} />
             <MenuItemTitle>Settings</MenuItemTitle>
           </MenuItem>
-          <MenuItem onClick={goToWebUIPage('extensions')}>
+          {/* <MenuItem onClick={goToWebUIPage('extensions')}>
             <Icon icon={icons.extensions} />
             <MenuItemTitle>Extensions</MenuItemTitle>
-          </MenuItem>
+          </MenuItem> */}
           <Line />
           <MenuItem>
             <Icon icon={icons.find} />

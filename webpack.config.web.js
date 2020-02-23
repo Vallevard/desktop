@@ -19,6 +19,6 @@ const webConfig = getConfig(getBaseConfig('web'), {
   externals: { electron: 'require("electron")' },
 });
 
-applyEntries('web', webConfig, ['settings', 'history', 'newtab', 'bookmarks']);
+applyEntries('web', webConfig, ['settings', 'history', 'newtab', 'bookmarks', 'downloads']);
 
 module.exports = webConfig;

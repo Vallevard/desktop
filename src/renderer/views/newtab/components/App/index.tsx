@@ -59,11 +59,11 @@ export default hot(
                 icon={icons.download}
                 onClick={onIconClick('downloads')}
               ></IconItem>
-              <IconItem
+              {/* <IconItem
                 title="Extensions"
                 icon={icons.extensions}
                 onClick={onIconClick('extensions')}
-              ></IconItem>
+              ></IconItem> */}
             </Menu>
 
             <Refresh icon={icons.refresh} onClick={onRefreshClick}></Refresh>
