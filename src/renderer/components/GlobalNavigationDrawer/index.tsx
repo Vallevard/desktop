@@ -14,18 +14,18 @@ const MenuItem = observer(
     children: any;
     icon?: string;
   }) => (
-    <NavigationDrawer.Item
-      onClick={() =>
-        (window.location.href = `${WEBUI_BASE_URL}${name}${WEBUI_URL_SUFFIX}`)
-      }
-      selected={window.location.href.startsWith(
-        `${WEBUI_BASE_URL}${name}${WEBUI_URL_SUFFIX}`,
-      )}
-      icon={icon}
-    >
-      {children}
-    </NavigationDrawer.Item>
-  ),
+      <NavigationDrawer.Item
+        onClick={() =>
+          (window.location.href = `${WEBUI_BASE_URL}${name}${WEBUI_URL_SUFFIX}`)
+        }
+        selected={window.location.href.startsWith(
+          `${WEBUI_BASE_URL}${name}${WEBUI_URL_SUFFIX}`,
+        )}
+        icon={icon}
+      >
+        {children}
+      </NavigationDrawer.Item>
+    ),
 );
 
 export const GlobalNavigationDrawer = () => {
@@ -43,9 +43,9 @@ export const GlobalNavigationDrawer = () => {
       <MenuItem name="downloads" icon={icons.download}>
         Downloads
       </MenuItem>
-      <MenuItem name="extensions" icon={icons.extensions}>
+      {/* <MenuItem name="extensions" icon={icons.extensions}>
         Extensions
-      </MenuItem>
+      </MenuItem> */}
     </NavigationDrawer>
   );
 };

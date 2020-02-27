@@ -8,7 +8,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Wrapper, Content, IconItem, Menu, Image, Refresh } from './style';
 import { TopSites } from '../TopSites';
 import { icons } from '~/renderer/constants';
-import { News } from '../News';
+// import { News } from '../News';
 import { WEBUI_BASE_URL, WEBUI_URL_SUFFIX } from '~/constants/files';
 
 const GlobalStyle = createGlobalStyle`${Style}`;
@@ -59,18 +59,18 @@ export default hot(
                 icon={icons.download}
                 onClick={onIconClick('downloads')}
               ></IconItem>
-              <IconItem
+              {/* <IconItem
                 title="Extensions"
                 icon={icons.extensions}
                 onClick={onIconClick('extensions')}
-              ></IconItem>
+              ></IconItem> */}
             </Menu>
 
             <Refresh icon={icons.refresh} onClick={onRefreshClick}></Refresh>
           </Wrapper>
-          <Content>
+          {/* <Content>
             <News></News>
-          </Content>
+          </Content> */}
         </div>
       </ThemeProvider>
     );

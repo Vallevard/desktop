@@ -407,7 +407,7 @@ export class StorageService {
 
           const str = `data:${
             (await fromBuffer(data)).ext
-          };base64,${data.toString('base64')}`;
+            };base64,${data.toString('base64')}`;
 
           this.insert({
             scope: 'favicons',

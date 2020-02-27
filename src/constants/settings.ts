@@ -10,7 +10,7 @@ export const DEFAULT_SETTINGS: ISettings = {
   multrin: true,
   animations: true,
   bookmarksBar: false,
-  suggestions: true,
+  suggestions: false,
   themeAuto: false,
   searchEngines: [],
   searchEngine: 0,
