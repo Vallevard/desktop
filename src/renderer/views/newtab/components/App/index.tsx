@@ -43,39 +43,48 @@ export default hot(
 
           <Preferences />
 
-          <Menu>
-            <IconItem
-              title="Settings"
-              icon={icons.settings}
-              onClick={onIconClick('settings')}
-            ></IconItem>
-            <IconItem
-              title="History"
-              icon={icons.history}
-              onClick={onIconClick('history')}
-            ></IconItem>
-            <IconItem
-              title="Bookmarks"
-              icon={icons.bookmarks}
-              onClick={onIconClick('bookmarks')}
-            ></IconItem>
-            <IconItem
-              title="Downloads"
-              icon={icons.download}
-              onClick={onIconClick('downloads')}
-            ></IconItem>
-            {/* <IconItem
-                title="Extensions"
-                icon={icons.extensions}
-                onClick={onIconClick('extensions')}
-              ></IconItem> */}
-          </Menu>
+          <Wrapper>
+            <Image src={store.imageVisible ? store.image : ''}></Image>
+            <RightBar>
+              <IconItem
+                imageSet={store.imageVisible}
+                title="Dashboard settings"
+                icon={icons.tune}
+                onMouseDown={e => e.stopPropagation()}
+                onClick={onTuneClick}
+              ></IconItem>
+            </RightBar>
 
-          <Refresh icon={icons.refresh} onClick={onRefreshClick}></Refresh>
+            {store.quickMenuVisible && (
+              <Menu>
+                <IconItem
+                  imageSet={store.imageVisible}
+                  title="Settings"
+                  icon={icons.settings}
+                  onClick={onIconClick('settings')}
+                ></IconItem>
+                <IconItem
+                  imageSet={store.imageVisible}
+                  title="History"
+                  icon={icons.history}
+                  onClick={onIconClick('history')}
+                ></IconItem>
+                <IconItem
+                  imageSet={store.imageVisible}
+                  title="Bookmarks"
+                  icon={icons.bookmarks}
+                  onClick={onIconClick('bookmarks')}
+                ></IconItem>
+                <IconItem
+                  imageSet={store.imageVisible}
+                  title="Downloads"
+                  icon={icons.download}
+                  onClick={onIconClick('downloads')}
+                ></IconItem>
+              </Menu>
+            )}
+            <Content>{store.topSitesVisible && <TopSites></TopSites>}</Content>
           </Wrapper>
-        {/* <Content>
-            <News></News>
-          </Content> */}
         </div>
       </ThemeProvider >
     );

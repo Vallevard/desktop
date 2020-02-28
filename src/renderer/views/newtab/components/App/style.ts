@@ -42,29 +42,8 @@ export const Image = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-<<<<<<< HEAD
-  overflow: hidden;
   // position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    background-attachment: fixed;
-    background-image: radial-gradient(
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.5) 100%
-      ),
-      radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.3) 166%);
-  }
-=======
-  position: relative;
   overflow: hidden;
->>>>>>> upstream/master
 `;
 
 export const Content = styled.div`
@@ -75,7 +54,7 @@ export const Content = styled.div`
   max-width: 1366px;
   position: relative;
   min-height: 97px;
-  z-index: 3;
+  z-index: 1;
 `;
 
 export const RightBar = styled.div`
@@ -84,7 +63,8 @@ export const RightBar = styled.div`
   right: 32px;
   flex-flow: column;
   height: 100%;
-  padding-top: 32px;
+  // padding-top: 32px;
+  top:32px;
 `;
 
 export const Menu = styled.div`
@@ -93,7 +73,7 @@ export const Menu = styled.div`
   flex-flow: row;
   justify-content: center;
   width: 100%;
-  bottom: 32px;
+  top: 32px;
 `;
 
 export const IconItem = styled.div`
@@ -111,17 +91,17 @@ export const IconItem = styled.div`
   }
 
   ${({
-    icon,
-    imageSet,
-    theme,
-  }: {
-    icon?: string;
-    theme?: ITheme;
-    imageSet?: boolean;
-  }) => css`
+  icon,
+  imageSet,
+  theme,
+}: {
+  icon?: string;
+  theme?: ITheme;
+  imageSet?: boolean;
+}) => css`
     filter: ${!imageSet && !theme['pages.lightForeground']
-      ? 'invert(100%)'
-      : 'none'};
+    ? 'invert(100%)'
+    : 'none'};
 
     &:hover {
       opacity: 1;
